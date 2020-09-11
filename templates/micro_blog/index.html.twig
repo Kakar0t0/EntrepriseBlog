@@ -1,13 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MicroBlogController!{% endblock %}
-
 {% block body %}
-    {% for article in articles %}
+
+    {% for article in articles %}        
         <artcile>
-            <h2>{{article.title}}</h2>
-            <p>{{article.content}}</p>
-            <p>Créé le {{article.createdAt | date('d,m,Y')}}</p>
+            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+            <div class="card-header"><h4>{{article.title}}</h4></div>
+            <div class="card-body">
+                <p class="card-text">{{article.content}}</p>
+                <p class="card-text"><i>Créé le {{article.createdAt | date('d,m,Y')}}</i></p>
+            </div>
+            </div>
         </artcile>
     {% endfor %}
+
 {% endblock %}

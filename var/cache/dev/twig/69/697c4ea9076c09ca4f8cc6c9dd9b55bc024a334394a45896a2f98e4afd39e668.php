@@ -25,7 +25,6 @@ class __TwigTemplate_64188676ca450f63a58d29efe3e1340930d20501ebfd494183f4a740990
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -56,25 +55,6 @@ class __TwigTemplate_64188676ca450f63a58d29efe3e1340930d20501ebfd494183f4a740990
     }
 
     // line 3
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        echo "Hello MicroBlogController!";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 5
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,30 +64,39 @@ class __TwigTemplate_64188676ca450f63a58d29efe3e1340930d20501ebfd494183f4a740990
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"";
+        // line 4
+        echo "
+    ";
+        // line 5
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 5, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
+            echo "        
+        <artcile>
+            <div class=\"card text-white bg-secondary mb-3\" style=\"max-width: 20rem;\">
+            <div class=\"card-header\"><h4>";
+            // line 8
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 8), "html", null, true);
+            echo "</h4></div>
+            <div class=\"card-body\">
+                <p class=\"card-text\">";
+            // line 10
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "content", [], "any", false, false, false, 10), "html", null, true);
+            echo "</p>
+                <p class=\"card-text\"><i>Créé le ";
+            // line 11
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "createdAt", [], "any", false, false, false, 11), "d,m,Y"), "html", null, true);
+            echo "</i></p>
+            </div>
+            </div>
+        </artcile>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("D:/Cours/I1/Conception & Plannification/Blog/MicroBlogging/src/Controller/MicroBlogController.php", 0), "html", null, true);
-        echo "\">src/Controller/MicroBlogController.php</a></code></li>
-        <li>Your template at <code><a href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("D:/Cours/I1/Conception & Plannification/Blog/MicroBlogging/templates/micro_blog/index.html.twig", 0), "html", null, true);
-        echo "\">templates/micro_blog/index.html.twig</a></code></li>
-    </ul>
-</div>
+        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -129,31 +118,27 @@ class __TwigTemplate_64188676ca450f63a58d29efe3e1340930d20501ebfd494183f4a740990
 
     public function getDebugInfo()
     {
-        return array (  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  99 => 16,  88 => 11,  84 => 10,  79 => 8,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello MicroBlogController!{% endblock %}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    {% for article in articles %}        
+        <artcile>
+            <div class=\"card text-white bg-secondary mb-3\" style=\"max-width: 20rem;\">
+            <div class=\"card-header\"><h4>{{article.title}}</h4></div>
+            <div class=\"card-body\">
+                <p class=\"card-text\">{{article.content}}</p>
+                <p class=\"card-text\"><i>Créé le {{article.createdAt | date('d,m,Y')}}</i></p>
+            </div>
+            </div>
+        </artcile>
+    {% endfor %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"{{ 'D:/Cours/I1/Conception & Plannification/Blog/MicroBlogging/src/Controller/MicroBlogController.php'|file_link(0) }}\">src/Controller/MicroBlogController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ 'D:/Cours/I1/Conception & Plannification/Blog/MicroBlogging/templates/micro_blog/index.html.twig'|file_link(0) }}\">templates/micro_blog/index.html.twig</a></code></li>
-    </ul>
-</div>
-{% endblock %}
-", "micro_blog/index.html.twig", "D:\\Cours\\I1\\Conception & Plannification\\Blog\\MicroBlogging\\templates\\micro_blog\\index.html.twig");
+{% endblock %}", "micro_blog/index.html.twig", "D:\\Cours\\I1\\Conception & Plannification\\Blog\\MicroBlogging\\templates\\micro_blog\\index.html.twig");
     }
 }
